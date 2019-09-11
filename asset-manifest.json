@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/salmonrun-rotation-static/static/css/main.21fc25e7.chunk.css",
-    "main.js": "/salmonrun-rotation-static/static/js/main.50e48071.chunk.js",
-    "main.js.map": "/salmonrun-rotation-static/static/js/main.50e48071.chunk.js.map",
+    "main.js": "/salmonrun-rotation-static/static/js/main.ee071d22.chunk.js",
+    "main.js.map": "/salmonrun-rotation-static/static/js/main.ee071d22.chunk.js.map",
     "runtime~main.js": "/salmonrun-rotation-static/static/js/runtime~main.d11c4b45.js",
     "runtime~main.js.map": "/salmonrun-rotation-static/static/js/runtime~main.d11c4b45.js.map",
-    "static/js/2.6a2e5a7f.chunk.js": "/salmonrun-rotation-static/static/js/2.6a2e5a7f.chunk.js",
-    "static/js/2.6a2e5a7f.chunk.js.map": "/salmonrun-rotation-static/static/js/2.6a2e5a7f.chunk.js.map",
+    "static/js/2.1fd21cd2.chunk.js": "/salmonrun-rotation-static/static/js/2.1fd21cd2.chunk.js",
+    "static/js/2.1fd21cd2.chunk.js.map": "/salmonrun-rotation-static/static/js/2.1fd21cd2.chunk.js.map",
     "index.html": "/salmonrun-rotation-static/index.html",
-    "precache-manifest.bb5d560437fa4865097b62f64e0f9b4e.js": "/salmonrun-rotation-static/precache-manifest.bb5d560437fa4865097b62f64e0f9b4e.js",
+    "precache-manifest.cfdf1b65b8c36adf196c7bf87a6ee3c3.js": "/salmonrun-rotation-static/precache-manifest.cfdf1b65b8c36adf196c7bf87a6ee3c3.js",
     "service-worker.js": "/salmonrun-rotation-static/service-worker.js",
     "static/css/main.21fc25e7.chunk.css.map": "/salmonrun-rotation-static/static/css/main.21fc25e7.chunk.css.map"
   }
