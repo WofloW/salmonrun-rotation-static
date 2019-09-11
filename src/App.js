@@ -6,20 +6,10 @@ import _ from 'lodash'
 import moment from 'moment'
 import 'moment/locale/zh-cn'
 import axios from 'axios'
+import rotations from './rotations'
 
 moment.locale('zh-cn')
-
 function App() {
-  const [rotation, setRotation] = useState({})
-  useEffect(() => {
-    axios.get('https://files.oatmealdome.me/bcat/coop.json')
-      .then((res) => {
-        setRotation(res.data)
-      })
-      .catch((err) => {
-        console.error(err)
-      })
-  }, [])
 
   return (
     <div className="App">
@@ -28,7 +18,7 @@ function App() {
       <div style={{fontSize: 12, marginBottom:10}}>夜风制作 打工qq群: 138151784</div>
       {/*<img src={logo} className="App-logo" alt="logo" />*/}
       {
-        _.map(rotation.Phases, (phase) => {
+        _.map(rotations.Phases, (phase) => {
           const start = moment(phase.StartDateTime+'+00:00')
           const end = moment(phase.EndDateTime+'+00:00')
 
