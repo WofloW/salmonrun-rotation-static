@@ -69,15 +69,16 @@ const reward = _.find(rotations.MonthlyRewardGears, {DateTime: phase.StartDateTi
         }
       </div>
     </div>
-    {
-      _.includes(phase.WeaponSets, -1) &&
-      <img
-        style={{width: '25%'}}
-        src={`https://woflow.github.io/salmonrun-rotation-static/weapons/Wst_${_.find(weapons, {Id: phase.RareWeaponID}).Name}.png`}/>
-    }
+
     <div>
-      <img style={{width: '25%'}}
-           src={`https://woflow.github.io/salmonrun-rotation-static/gear/${rewardGear}.png`}/>
+      <img style={{width: '25%', float: 'left'}}
+           src={`https://woflow.github.io/salmonrun-rotation-static/gears/${rewardGear}.png`}/>
+      {
+        _.includes(phase.WeaponSets, -1) &&
+        <img
+          style={{width: '25%', float: 'right'}}
+          src={`https://woflow.github.io/salmonrun-rotation-static/weapons/Wst_${_.find(weapons, {Id: phase.RareWeaponID}).Name}.png`}/>
+      }
     </div>
 
   </div>
