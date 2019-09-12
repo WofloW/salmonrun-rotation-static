@@ -1,82 +1,50 @@
 import React, {useEffect, useState} from 'react'
 import './App.css'
-import maps from './maps.json'
-import weapons from './weapons'
 import _ from 'lodash'
 import moment from 'moment'
 import 'moment/locale/zh-cn'
-import axios from 'axios'
+// import axios from 'axios'
 import rotations from './rotations'
+import Scrollable from './components/scrollable'
+import Card from './components/card'
 
 moment.locale('zh-cn')
+
+const filtered = _.filter(rotations.Phases, (phase) => {
+  const end = moment(phase.EndDateTime + '+00:00')
+  return end.isAfter(moment())
+})
+
 function App() {
-
-  return (
-    <div className="App">
-      <h3>Splatoon 2 Salmon Run rotation</h3>
-      <h3>乌贼2打工时间表</h3>
-      <div style={{fontSize: 12, marginBottom:10}}>夜风制作 打工qq群: 138151784</div>
-      {/*<img src={logo} className="App-logo" alt="logo" />*/}
-      {
-        _.map(rotations.Phases, (phase) => {
-          const start = moment(phase.StartDateTime+'+00:00')
-          const end = moment(phase.EndDateTime+'+00:00')
-
-          if (end.isAfter(moment())) {
-            let remaining = null
-            if (start.isBefore(moment())) {
-              const diff = end.diff(moment())
-              const duration = moment.duration(diff)
-              remaining = <div>{`距离结束：${duration.hours()}小时${duration.minutes()}分钟`}</div>
-            }
-            return <div key={phase.StartDateTime} className='card'>
-              {remaining}
-              <div>
-                开始时间：{start.format('lll')}
-              </div>
-              <div style={{marginBottom: 20}}>
-                结束时间：{end.format('lll')}
-              </div>
-              <div>
-                {/*<div>{phase.StageID}</div>*/}
-                <div><img style={{width: '100%'}}
-                          src={`https://woflow.github.io/salmonrun-rotation-static/stages/${_.find(maps, {Id: phase.StageID}).MapFileName}.png`}/>
-                </div>
-              </div>
-              <div style={{textAlign: 'center'}}>
-                <div style={{maxWidth: 625, display: 'inline-block'}}>
-                  {
-                    _.map(phase.WeaponSets, (weapon, index) => {
-                      let weaponName
-                      if (_.find(weapons, {Id: weapon})) {
-                        weaponName = `Wst_${_.find(weapons, {Id: weapon}).Name}`
-                      } else if (weapon === -1) {
-                        weaponName = 'questionmark'
-                      } else {
-                        weaponName = 'questionmark2'
-                      }
-                      return <div key={index} style={{display: 'inline-block', width: '25%'}}>
-                        <img style={{width: '90%'}} src={`https://woflow.github.io/salmonrun-rotation-static/weapons/${weaponName}.png`}/>
-                      </div>
-                    })
-                  }
-                </div>
-              </div>
-              {
-                _.includes(phase.WeaponSets, -1) &&
-                <img
-                  src={`https://woflow.github.io/salmonrun-rotation-static/weapons/Wst_${_.find(weapons, {Id: phase.RareWeaponID}).Name}.png`}/>
-              }
-
-            </div>
-          } else {
-            return null
+  const [showNumber, setShowNumber] = useState(5)
+  const takeRotation = _.take(filtered, showNumber)
+  if (window.location.search === '?access=138151784') {
+    return (
+      <Scrollable
+        isBottom={() => {
+          setShowNumber(showNumber + 5)
+        }}
+      >
+        <div className="App">
+          <h3>Splatoon 2 Salmon Run rotation</h3>
+          <h3>乌贼2打工时间表</h3>
+          <div style={{fontSize: 12, marginBottom: 10}}>夜风制作 打工qq群: 138151784</div>
+          <div style={{fontSize: 11}}>
+            <div>This website is built for Chinese players only who can't access oatmealdome website.</div>
+            <div>Rotation data from <a href='https://content.oatmealdome.me/bcat/salmon_run'>oatmealdome.me</a></div>
+            <div>Stage and weapon images from <a href='https://leanny.github.io'>leanny.github.io</a></div>
+          </div>
+          {
+            _.map(takeRotation, (phase, index) => {
+              return <Card phase={phase} key={phase.StartDateTime} index={index}/>
+            })
           }
-        })
-      }
-
-    </div>
-  )
+        </div>
+      </Scrollable>
+    )
+  } else {
+    return <div><h1>404 Not Found</h1></div>
+  }
 }
 
 export default App
