@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/salmonrun-rotation-static/precache-manifest.9bb0109241390eb9fc87621074cbfc2e.js"
+  "/salmonrun-rotation-static/precache-manifest.7e3b015cc3429560ad401794e2a8fbdc.js"
 );
 
 self.addEventListener('message', (event) => {
