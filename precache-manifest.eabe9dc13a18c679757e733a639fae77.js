@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "87dcae7dea9ae88f432d50b73f3afc70",
+    "revision": "8e9338075ef9f99decc79de8e07c52a8",
     "url": "/salmonrun-rotation-static/index.html"
   },
   {
-    "revision": "0803d6e9d97b9423ecf3",
+    "revision": "9d916937bd884b3d4a6a",
     "url": "/salmonrun-rotation-static/static/css/main.359bca3d.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/salmonrun-rotation-static/static/js/2.457f610b.chunk.js"
   },
   {
-    "revision": "0803d6e9d97b9423ecf3",
-    "url": "/salmonrun-rotation-static/static/js/main.6a16458a.chunk.js"
+    "revision": "9d916937bd884b3d4a6a",
+    "url": "/salmonrun-rotation-static/static/js/main.52739743.chunk.js"
   },
   {
     "revision": "538829fb3b54386f116a",
