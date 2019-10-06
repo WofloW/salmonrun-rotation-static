@@ -67,27 +67,27 @@ function App() {
           <div style={{fontSize: 12, marginBottom: 10}}>夜风制作 打工qq群: 138151784</div>
           <div style={{fontWeight: 400}}>
             <div style={{'user-select': 'none'}}>
-              <label className={map0 ? 'golden': null}>破坝<input type='checkbox' checked={map0} onChange={() => {
+              <label className={`${map0 ? 'golden': null} clickable`}>破坝<input type='checkbox' checked={map0} onChange={() => {
                 setMap0(!map0)
               }}/></label>
-              <label className={map1 ? 'golden': null}>破船<input type='checkbox' checked={map1} onChange={() => {
+              <label className={`${map1 ? 'golden': null} clickable`}>破船<input type='checkbox' checked={map1} onChange={() => {
                 setMap1(!map1)
               }}/></label>
-              <label className={map2 ? 'golden': null}>破屋<input type='checkbox' checked={map2} onChange={() => {
+              <label className={`${map2 ? 'golden': null} clickable`}>破屋<input type='checkbox' checked={map2} onChange={() => {
                 setMap2(!map2)
               }}/></label>
-              <label className={map3 ? 'golden': null}>臭水沟<input type='checkbox' checked={map3} onChange={() => {
+              <label className={`${map3 ? 'golden': null} clickable`}>臭水沟<input type='checkbox' checked={map3} onChange={() => {
                 setMap3(!map3)
               }}/></label>
-              <label className={map4 ? 'golden': null}>破楼<input type='checkbox' checked={map4} onChange={() => {
+              <label className={`${map4 ? 'golden': null} clickable`}>破楼<input type='checkbox' checked={map4} onChange={() => {
                 setMap4(!map4)
               }}/></label>
             </div>
             <div>
-              <label className={isRandomWeapon ? 'golden': null}>只看绿随机<input type='checkbox' checked={isRandomWeapon} onChange={() => {
+              <label className={`${isRandomWeapon ? 'golden': null} clickable`}>只看绿随机<input type='checkbox' checked={isRandomWeapon} onChange={() => {
                 setIsRandomWeapon(!isRandomWeapon)
               }}/></label>
-              <label className={isGolden ? 'golden': null}>只看金随机<input type='checkbox' checked={isGolden} onChange={() => {
+              <label className={`${isGolden ? 'golden': null} clickable`}>只看金随机<input type='checkbox' checked={isGolden} onChange={() => {
                 setIsGolden(!isGolden)
               }}/></label>
             </div>
