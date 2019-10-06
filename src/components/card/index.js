@@ -10,7 +10,6 @@ import shoes from '../../gear-shoes'
 
 export default function Card ({phase, index}){
 const reward = _.find(rotations.MonthlyRewardGears, {DateTime: phase.StartDateTime})
-  console.log(reward)
   const rewardType = reward.GearKind
   let database
   switch(rewardType){
