@@ -8,11 +8,11 @@ import hats from '../../gear-hats'
 import clothes from '../../gear-clothes'
 import shoes from '../../gear-shoes'
 
-export default function Card ({phase, index}){
-const reward = _.find(rotations.MonthlyRewardGears, {DateTime: phase.StartDateTime})
+export default function Card({phase, index}) {
+  const reward = _.find(rotations.MonthlyRewardGears, {DateTime: phase.StartDateTime})
   const rewardType = reward.GearKind
   let database
-  switch(rewardType){
+  switch (rewardType) {
     case 'cHead':
       database = hats
       break
@@ -57,7 +57,7 @@ const reward = _.find(rotations.MonthlyRewardGears, {DateTime: phase.StartDateTi
               weaponName = `Wst_${_.find(weapons, {Id: weapon}).Name}`
             } else if (weapon === -1) {
               weaponName = 'questionmark'
-            } else {
+            } else if (weapon === -2) {
               weaponName = 'questionmark2'
             }
             return <div key={index} style={{display: 'inline-block', width: '25%'}}>
@@ -70,8 +70,10 @@ const reward = _.find(rotations.MonthlyRewardGears, {DateTime: phase.StartDateTi
     </div>
 
     <div>
-      <img style={{width: '25%', float: 'left'}}
-           src={`https://woflow.github.io/salmonrun-rotation-static/gears/${rewardGear}.png`}/>
+      {
+        rewardGear && <img style={{width: '25%', float: 'left'}}
+                           src={`https://woflow.github.io/salmonrun-rotation-static/gears/${rewardGear}.png`}/>
+      }
       {
         _.includes(phase.WeaponSets, -1) &&
         <img
