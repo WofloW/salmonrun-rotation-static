@@ -37,10 +37,10 @@ export default function Card({phase, index}) {
   return <div className='card'>
     {remaining}
     <div>
-      开始时间：{start.format('lll')}
+      开始时间：{start.format('llll')}
     </div>
     <div style={{marginBottom: 20}}>
-      结束时间：{end.format('lll')}
+      结束时间：{end.format('llll')}
     </div>
     <div>
       {/*<div>{phase.StageID}</div>*/}
