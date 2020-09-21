@@ -6,7 +6,7 @@
     font-family: 'ZCOOL KuaiLe', cursive;
     font-size: 20px;
     font-weight: 600;
-    line-height:1.5;
+    line-height: 1.5;
 }
 
 .App-logo {
@@ -56,6 +56,10 @@
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.golden{
+.golden {
     color: gold;
+}
+
+.clickable {
+    cursor: pointer;
 }
